@@ -1,0 +1,6 @@
+framework module PreloadURLCache {
+  umbrella header "PreloadURLCache-umbrella.h"
+
+  export *
+  module * { export * }
+}

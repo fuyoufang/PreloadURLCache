@@ -21,22 +21,25 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/fuyoufang@163.com/PreloadURLCache'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://github.com/FuYouFang/PreloadURLCache.git'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'fuyoufang@163.com' => 'fuyoufang@163.com' }
-  s.source           = { :git => 'https://github.com/fuyoufang@163.com/PreloadURLCache.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => 'https://github.com/FuYouFang/PreloadURLCache.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '9.0'
-
   s.source_files = 'PreloadURLCache/Classes/**/*'
+    s.dependency 'Then'
   
-  # s.resource_bundles = {
-  #   'PreloadURLCache' => ['PreloadURLCache/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  
+  s.subspec 'JavascriptBridge' do |jsBridge|
+          jsBridge.dependency 'WebViewJavascriptBridge'
+      jsBridge.source_files = 'PreloadURLCache/JavascriptBridge/**/*'
+  end
+  
+  s.subspec 'WKWebView' do |webView|
+    webView.source_files = 'PreloadURLCache/WKWebView/**/*'
+    webView.public_header_files = 'PreloadURLCache/WKWebView/**/*.h'
+    webView.frameworks = 'UIKit', 'WebKit'
+  end
+  
 end

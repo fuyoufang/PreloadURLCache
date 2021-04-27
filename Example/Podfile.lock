@@ -1,0 +1,47 @@
+PODS:
+  - Nimble (8.0.9)
+  - PreloadURLCache (0.1.0):
+    - PreloadURLCache/JavascriptBridge (= 0.1.0)
+    - PreloadURLCache/WKWebView (= 0.1.0)
+    - Then
+  - PreloadURLCache/JavascriptBridge (0.1.0):
+    - Then
+    - WebViewJavascriptBridge
+  - PreloadURLCache/WKWebView (0.1.0):
+    - Then
+  - Quick (2.2.1)
+  - SnapKit (4.2.0)
+  - Then (2.7.0)
+  - WebViewJavascriptBridge (6.0.3)
+
+DEPENDENCIES:
+  - Nimble (~> 8.0.7)
+  - PreloadURLCache (from `../`)
+  - PreloadURLCache/JavascriptBridge (from `../`)
+  - PreloadURLCache/WKWebView (from `../`)
+  - Quick (~> 2.2.0)
+  - SnapKit
+
+SPEC REPOS:
+  trunk:
+    - Nimble
+    - Quick
+    - SnapKit
+    - Then
+    - WebViewJavascriptBridge
+
+EXTERNAL SOURCES:
+  PreloadURLCache:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Nimble: 98b888285a615fd34f20e61753cf58ea1402bde4
+  PreloadURLCache: 81a29dfca7fb6c6141cd26a1b25bb95af896948b
+  Quick: f5754d69b7013f5864c29aab9ae6f0c79c5bc200
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  Then: acfe0be7e98221c6204e12f8161459606d5d822d
+  WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
+
+PODFILE CHECKSUM: 653e3523f3f54702274a57f4b786fb7be76d763d
+
+COCOAPODS: 1.10.0

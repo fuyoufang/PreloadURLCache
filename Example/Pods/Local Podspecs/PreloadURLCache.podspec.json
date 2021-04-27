@@ -1,0 +1,47 @@
+{
+  "name": "PreloadURLCache",
+  "version": "0.1.0",
+  "summary": "A short description of PreloadURLCache.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/FuYouFang/PreloadURLCache.git",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "fuyoufang@163.com": "fuyoufang@163.com"
+  },
+  "source": {
+    "git": "https://github.com/FuYouFang/PreloadURLCache.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "PreloadURLCache/Classes/**/*",
+  "dependencies": {
+    "Then": [
+
+    ]
+  },
+  "subspecs": [
+    {
+      "name": "JavascriptBridge",
+      "dependencies": {
+        "WebViewJavascriptBridge": [
+
+        ]
+      },
+      "source_files": "PreloadURLCache/JavascriptBridge/**/*"
+    },
+    {
+      "name": "WKWebView",
+      "source_files": "PreloadURLCache/WKWebView/**/*",
+      "public_header_files": "PreloadURLCache/WKWebView/**/*.h",
+      "frameworks": [
+        "UIKit",
+        "WebKit"
+      ]
+    }
+  ]
+}
