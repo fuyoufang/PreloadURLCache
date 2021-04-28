@@ -28,10 +28,6 @@ public extension PreloadURLCacheDelegate {
 public class PreloadURLCache: URLCache {
     let mk: PreloadURLCacheMk
     
-    @objc public static let shard = PreloadURLCache(config: { (mk) in
-        mk.isUsingURLProtocol(true)
-    })
-    
     public weak var delegate: PreloadURLCacheDelegate?
     
     // 预加载的webview的url列表
@@ -225,7 +221,7 @@ public class PreloadURLCache: URLCache {
         }
         
         // 对于域名白名单的过滤
-        guard let host = host(for: request),
+        guard let host = request.url?.host,
            let _ = config.whiteListsHost[host] else {
             return nil
         }
@@ -259,12 +255,7 @@ public class PreloadURLCache: URLCache {
         super.removeCachedResponse(for: request)
         mk.config.removeCacheFile(request: request)
     }
-    // MARK: - helper
     
-    func host(for request: URLRequest) -> String? {
-        return request.url?.host
-    }
-
     deinit {
         URLCache.shared = URLCache(memoryCapacity: 0, diskCapacity: 0, diskPath: nil)
     }

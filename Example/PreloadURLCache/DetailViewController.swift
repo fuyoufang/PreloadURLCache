@@ -34,7 +34,6 @@ class DetailViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         
         javascriptBridge = WKWebViewJavascriptBridge(for: webView)
-//        javascriptBridge?.zy_registerLuckySpinHandler(webView, [jsParameterKey_roomId : "roomId"])
 
     }
     

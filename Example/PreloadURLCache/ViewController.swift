@@ -19,6 +19,12 @@ class ViewController: UIViewController {
         URL(string: $0)
     }
     
+    lazy var preloadURLCache = PreloadURLCache(config: { (mk) in
+        mk.isUsingURLProtocol(true)
+    }).then {
+        $0.delegate = self
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -28,8 +34,8 @@ class ViewController: UIViewController {
         URLProtocol.wk_registerScheme("http")
         URLProtocol.wk_registerScheme("https")
         
-        PreloadURLCache.shard.delegate = self
-        PreloadURLCache.shard.preloadByWebView(urls: preloadUrls) { (webView, javascriptBridge) in
+        
+        preloadURLCache.preloadByWebView(urls: preloadUrls) { (webView, javascriptBridge) in
             // javascriptBridge.zy_registerLuckySpinHandler(webView, [jsParameterKey_roomId : "roomId"])
         }
     }

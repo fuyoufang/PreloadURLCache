@@ -154,7 +154,10 @@ extension PreloadURLProtocol: URLSessionDataDelegate {
     }
 
     
-    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive response: URLResponse, completionHandler: @escaping (URLSession.ResponseDisposition) -> Void) {
+    func urlSession(_ session: URLSession,
+                    dataTask: URLSessionDataTask,
+                    didReceive response: URLResponse,
+                    completionHandler: @escaping (URLSession.ResponseDisposition) -> Void) {
         client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .allowed)
         self.response = response
         completionHandler(.allow)
